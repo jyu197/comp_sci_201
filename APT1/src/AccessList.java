@@ -1,13 +1,13 @@
 
 public class AccessList {
 
-	public String mayAccess(int[] rights, int minPermission){
+	public String mayAccess(int[] rights, int minPermission) {
 		String access = "";
-		for(int i = 0; i < rights.length; i++){
-			if(rights[i] < minPermission){
+		for (int i = 0; i < rights.length; i++) {
+			if (rights[i] < minPermission) {
 				access += "D";
 			}
-			else{
+			else {
 				access += "A";
 			}
 		}
