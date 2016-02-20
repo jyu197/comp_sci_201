@@ -4,6 +4,7 @@ import java.util.Comparator;
 public class TheBestName {
 
 	public class Sorter implements Comparator<String>{
+		
 		public int compare(String a, String b) {
 			if (a.equals(b)) {
 				return 0;
@@ -32,11 +33,12 @@ public class TheBestName {
 				return a.compareTo(b);
 			}
 		}
+		
 	}
+	
 	public String[] sort(String[] names) {
-		String[] data = names.clone();
-		Arrays.sort(data, new Sorter());
-		return data;
+		Arrays.sort(names, new Sorter());
+		return names;
 	}
 	
 }

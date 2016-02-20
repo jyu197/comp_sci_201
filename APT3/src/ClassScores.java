@@ -4,19 +4,18 @@ import java.util.LinkedList;
 public class ClassScores {
 	
 	public int[] findMode(int[] scores) {
-		int[] data = scores.clone();
-		Arrays.sort(data);
+		Arrays.sort(scores);
 		LinkedList<Integer> modes = new LinkedList<Integer>();
 		int streakStart = 0;
 		int currentStreak;
 		int longestStreak = 1;
-		if (data.length == 1) {
-			return data;
+		if (scores.length == 1) {
+			return scores;
 		}
-		for (int i = 1; i < data.length; i++) {
+		for (int i = 1; i < scores.length; i++) {
 			currentStreak = i - streakStart;
-			if (data[i] == data[streakStart]) {
-				if (i != data.length - 1) {
+			if (scores[i] == scores[streakStart]) {
+				if (i != scores.length - 1) {
 					continue;
 				}
 				else {
@@ -27,12 +26,12 @@ public class ClassScores {
 				modes.clear();
 			}
 			if (currentStreak >= longestStreak) {
-				modes.add(data[streakStart]);
+				modes.add(scores[streakStart]);
 				longestStreak = currentStreak;
 			}
-			if (i == data.length - 1) {
+			if (i == scores.length - 1) {
 				if (longestStreak == 1) {
-					modes.add(data[i]);
+					modes.add(scores[i]);
 				}
 			}
 			streakStart = i;
